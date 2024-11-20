@@ -1,0 +1,6 @@
+support:
+  database:
+    keys:
+      url: localhost:3306/superchat
+      username: root
+      password: password

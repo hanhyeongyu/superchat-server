@@ -1,0 +1,54 @@
+security:
+  jwt:
+    secret: 35f5eebf-1ac7-4684-afc8-8ffd0b4b8606
+    issue: http://localhost:8080
+    expiration:
+      access: 30  #30m
+      refresh: 10080 #7d
+  password:
+    encoder:
+      secret: ea413f43-16f2-421c-8cf2-45b598fc9634
+
+
+---
+spring.config.activate.on-profile: local
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+---
+spring.config.activate.on-profile: local-dev
+
+
+security:
+  jwt:
+    expiration:
+      access: 10080  #7d
+      refresh: 10080 #7d
+
+logging:
+  level:
+    org.springframework.security: INFO
+
+---
+spring.config.activate.on-profile: dev
+
+logging:
+  level:
+    org.springframework.security: INFO
+
+---
+spring.config.activate.on-profile: staging
+
+logging:
+  level:
+    org.springframework.security: INFO
+
+---
+spring.config.activate.on-profile: live
+
+logging:
+  level:
+    org.springframework.security: INFO
